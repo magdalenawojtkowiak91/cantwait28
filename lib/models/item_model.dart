@@ -3,11 +3,15 @@ class ItemModel {
     required this.title,
     required this.id,
     required this.imageURL,
-    required this.relaseDate,
+    required this.releaseDate,
   });
 
   final String title;
   final String id;
   final String imageURL;
-  final DateTime relaseDate;
+  final DateTime releaseDate;
+
+  String daysLeft() {
+    return releaseDate.difference(DateTime.now()).inDays.toString();
+  }
 }
